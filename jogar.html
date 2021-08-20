@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+	<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="estilo.css" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+	<title>
+		Jogo Da V�ia
+	</title>
+
+	</head>
+
+<body class="w3-black">
+	
+
+<style>
+	body{
+		margin:0px;
+		padding:0px;
+		border:0px;
+		font-family: arial, helvetica, sans-serif;
+		background-color:black;
+	}
+
+
+
+
+	#jogando {
+		background-color:black;
+		margin-right:20%;
+		margin-left:20%;
+		margin-top:10%;
+		border: solid 2px white;	
+	}
+	#jogando button{
+		background-color:red;
+		padding:5%;
+		margin:2.4%;
+		width:28%;
+		height:28%;	
+	}
+	#jogando button:hover{
+		border: solid 2px white;
+	}
+	
+	.corpo{
+		height: 700px;
+		width:100%;
+		position:absolute;
+	}
+	.corpo a{
+		text-decoration:none;	
+	}
+	#titulo{
+		
+	}
+	.rodape{ display:block; }
+	
+</style>
+	
+	
+<script >
+
+//vari�veis q ser�o associadas aos elementos html do tabuleiro
+var l1c1;
+var l1c2;
+var l1c3;
+
+var l2c1;
+var l2c2;
+var l2c3;
+
+var l3c1;
+var l3c2;
+var l3c3;
+
+//inicializando o jogo com a vez do jogador X
+var jogador = "X";
+	
+	
+	
+function clicar(){
+
+	
+	//mostrando no console e alterando o titulo 
+	//indicando de qem �  a vez
+
+	console.log("Jogador: "+jogador)
+	texto = document.getElementById('txtitulo');
+	texto.innerHTML = "Vez do Jogador : "+ jogador;
+	mudarJogador()
+
+	//buscando o id do elemento clicado
+	var btn = event.target.id;
+	
+	//alterando texto do botao clicado
+	var txt = document.getElementById(btn).innerHTML = jogador;
+
+
+
+	//atribuindo os valores do html para variaveis js
+
+	l1c1 = document.getElementById('btnl1c1').innerHTML;
+	l1c2 = document.getElementById('btnl1c2').innerHTML;
+	l1c3 = document.getElementById('btnl1c3').innerHTML;
+
+	l2c1 = document.getElementById('btnl2c1').innerHTML;
+	l2c2 = document.getElementById('btnl2c2').innerHTML;
+	l2c3 = document.getElementById('btnl2c3').innerHTML;
+
+	l3c1 = document.getElementById('btnl3c1').innerHTML;
+	l3c2 = document.getElementById('btnl3c2').innerHTML;
+	l3c3 = document.getElementById('btnl3c3').innerHTML;
+
+
+
+
+	//chamando fun��o para verificar se algu�m ganhou
+	verificarGanhador();
+
+		
+
+		console.log("primeira casa "+l1c1);	
+}
+	
+	
+	
+
+
+
+
+
+
+	//alterando entre jogadores
+	function mudarJogador(){
+		
+			if (jogador == "X"){
+				jogador = "O";
+				return jogador
+				
+			} else {
+				jogador = "X";
+				return jogador	
+					
+			} 
+				
+	}
+
+
+function verificarGanhador(){
+	
+
+	//horizontal
+	if(l1c1 ==l1c2 && l1c1 == l1c3){
+	alert("ora ora temos um ganhador -> "+l1c1);
+	
+	avisarGanhador();
+		sleep(1000);
+	location.reload();
+	
+	}
+	else if(l2c1 ==l2c2 && l2c1 ==l2c3){
+	alert("ora ora temos um ganhador -> "+l2c1);
+	location.reload();
+	}
+	else if(l3c1==l3c2 && l3c1==l3c3) {
+	alert("ora ora temos um ganhador -> "+l3c1);
+	location.reload();
+	}
+
+	//vertical
+	else if(l1c1==l2c1 && l1c1==l3c1) {
+	alert("ora ora temos um ganhador -> "+l1c1);
+	location.reload();
+	}
+	else if(l1c2==l2c2 && l1c2==l3c2) {
+	alert("ora ora temos um ganhador -> "+l1c2);
+	location.reload();
+	}
+	else if(l1c3==l2c3 && l2c3==l3c3) {
+	alert("ora ora temos um ganhador -> "+l1c3);
+	location.reload();
+	}
+	
+	//diagonal
+	else if (l1c1 == l2c2 && l1c1 == l3c3){
+	alert("ora ora temos um ganhador -> "+l1c1);
+	location.reload();
+	}
+	else if(l1c3 == l2c2 && l1c3 == l3c1){
+	alert("ora ora temos um ganhador -> "+l1c3);
+	location.reload();
+	}
+	
+}
+
+	/*
+	/a desenvolver/
+	function criarPlacar(){
+	}*/
+
+
+
+
+	
+		
+
+function avisarGanhador(){
+		//guardar elemento pai como body
+		var elem_pai = document.body;
+		
+		//criando elemento h1
+		var mensagemGanhador = document.createElement('h1');
+
+		//estilizando o h1 criado acima
+		mensagemGanhador.style.backgroundColor = "red";
+		mensagemGanhador.style.width="60%";
+		mensagemGanhador.style.height="300px";
+		mensagemGanhador.style.marginTop="300px";
+		mensagemGanhador.style.position="absolute";
+		mensagemGanhador.style.marginLeft="20%";
+		mensagemGanhador.style.marginRight="20%";
+		mensagemGanhador.style.textAlign="center";
+		mensagemGanhador.style.padding="10%";
+		
+		console.log(mensagemGanhador);
+
+		//atribuindo o h1 como filho do body
+		elem_pai.appendChild(mensagemGanhador);
+		
+		//criando mensagem de notifica��o de vencedor
+		var textovitoria = document.createTextNode("voce ganhou "+jogador);
+		mensagemGanhador.appendChild(textovitoria);
+		console.log(elem_pai);
+}
+
+
+</script>
+
+
+<div class="corpo">
+
+
+
+	<div id="titulo">
+
+		<a href="jogar.html" >
+		<h1 class=" w3-center w3-xxxlarge" value="jogo da velha">	 
+		Jogo da V�ia</h1> </a>
+	</div>
+
+
+	<div id="jogando">
+		
+		<h2 id="txtitulo" class=" w3-center" > Vez do Jogador : O</h2>
+		
+		<button onclick="clicar()" class="w3-xxlarge" id="btnl1c1"> 1</button>
+		<button onclick="clicar()" class="w3-xxlarge" id="btnl1c2"> 2</button>
+		<button onclick="clicar()" class="w3-xxlarge" id="btnl1c3"> 3</button>
+		<br>
+
+		<button onclick="clicar()" class="w3-xxlarge" id="btnl2c1"> 4</button>
+		<button onclick="clicar()" class="w3-xxlarge" id="btnl2c2"> 5</button>
+		<button onclick="clicar()" class="w3-xxlarge" id="btnl2c3"> 6</button>
+		<br>
+
+		<button onclick="clicar()" class="w3-xxlarge" id="btnl3c1"> 7</button>
+		<button onclick="clicar()" class="w3-xxlarge" id="btnl3c2"> 8</button>
+		<button onclick="clicar()" class="w3-xxlarge" id="btnl3c3"> 9</button>
+		<br>
+
+	</div>
+
+
+<div class= "rodape">
+		
+	<h5 class="w3-center w3-text-white">
+		Este site � uma iniciativa popular sem fins lucrativos.
+	</h5>
+	<h6 class="w3-center w3-text-white">
+		Todos os direitos de autores (as) devem ser respeitados. <br>
+		O Projeto � livre para qualquer uso referenciando a autoria.
+	</h6>
+</div>
+
+
+</div>
+
+
+
+
+
+</body>
+
+
+
+</html>
