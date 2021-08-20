@@ -16,6 +16,17 @@
 	
 
 <style>
+	body{
+		margin:0px;
+		padding:0px;
+		border:0px;
+		font-family: arial, helvetica, sans-serif;
+		background-color:black;
+	}
+
+
+
+
 	#jogando {
 		background-color:black;
 		margin-right:20%;
@@ -37,6 +48,7 @@
 	.corpo{
 		height: 700px;
 		width:100%;
+		position:absolute;
 	}
 	.corpo a{
 		text-decoration:none;	
@@ -44,6 +56,7 @@
 	#titulo{
 		
 	}
+	.rodape{ display:block; }
 	
 </style>
 	
@@ -142,6 +155,9 @@ function verificarGanhador(){
 	//horizontal
 	if(l1c1 ==l1c2 && l1c1 == l1c3){
 	alert("ora ora temos um ganhador -> "+l1c1);
+	
+	avisarGanhador();
+		sleep(1000);
 	location.reload();
 	
 	}
@@ -183,12 +199,42 @@ function verificarGanhador(){
 	/*
 	/a desenvolver/
 	function criarPlacar(){
-	ma
 	}*/
 
+
+
+
+	
 		
 
+function avisarGanhador(){
+		//guardar elemento pai como body
+		var elem_pai = document.body;
+		
+		//criando elemento h1
+		var mensagemGanhador = document.createElement('h1');
 
+		//estilizando o h1 criado acima
+		mensagemGanhador.style.backgroundColor = "red";
+		mensagemGanhador.style.width="60%";
+		mensagemGanhador.style.height="300px";
+		mensagemGanhador.style.marginTop="300px";
+		mensagemGanhador.style.position="absolute";
+		mensagemGanhador.style.marginLeft="20%";
+		mensagemGanhador.style.marginRight="20%";
+		mensagemGanhador.style.textAlign="center";
+		mensagemGanhador.style.padding="10%";
+		
+		console.log(mensagemGanhador);
+
+		//atribuindo o h1 como filho do body
+		elem_pai.appendChild(mensagemGanhador);
+		
+		//criando mensagem de notificação de vencedor
+		var textovitoria = document.createTextNode("voce ganhou "+jogador);
+		mensagemGanhador.appendChild(textovitoria);
+		console.log(elem_pai);
+}
 
 
 </script>
@@ -227,10 +273,6 @@ function verificarGanhador(){
 
 	</div>
 
-</div>
-
-<div>
-</div>
 
 <div class= "rodape">
 		
@@ -239,9 +281,14 @@ function verificarGanhador(){
 	</h5>
 	<h6 class="w3-center w3-text-white">
 		Todos os direitos de autores (as) devem ser respeitados. <br>
-		As publicações de E-books são de completa responsabilidade do usuário.
+		O Projeto é livre para qualquer uso referenciando a autoria.
 	</h6>
 </div>
+
+
+</div>
+
+
 
 
 
