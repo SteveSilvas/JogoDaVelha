@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-	<head>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="estilo.css" type="text/css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
 	<title>
-		Jogo Da V�ia
+		Jogo Da Velha
 	</title>
 
 	</head>
@@ -79,15 +80,12 @@ var l3c3;
 //inicializando o jogo com a vez do jogador X
 var jogador = "X";
 	
-	
-	
+		
 function clicar(){
 
-	
 	//mostrando no console e alterando o titulo 
 	//indicando de qem �  a vez
 
-	console.log("Jogador: "+jogador)
 	texto = document.getElementById('txtitulo');
 	texto.innerHTML = "Vez do Jogador : "+ jogador;
 	mudarJogador()
@@ -115,23 +113,10 @@ function clicar(){
 	l3c3 = document.getElementById('btnl3c3').innerHTML;
 
 
-
-
 	//chamando fun��o para verificar se algu�m ganhou
 	verificarGanhador();
 
-		
-
-		console.log("primeira casa "+l1c1);	
 }
-	
-	
-	
-
-
-
-
-
 
 	//alterando entre jogadores
 	function mudarJogador(){
@@ -154,55 +139,117 @@ function verificarGanhador(){
 
 	//horizontal
 	if(l1c1 ==l1c2 && l1c1 == l1c3){
-	alert("ora ora temos um ganhador -> "+l1c1);
-	
+	//chama função que cria quadro de avisos html
 	avisarGanhador();
-		sleep(1);
-	location.reload();
-	
+    //usando setTimeout para aguardar 3 segundos antes de recarregar a pag
+    setTimeout(function(){
+    //recarregando a página
+    location.reload();
+    },1000);
 	}
+
 	else if(l2c1 ==l2c2 && l2c1 ==l2c3){
-	alert("ora ora temos um ganhador -> "+l2c1);
-	location.reload();
+    avisarGanhador();
+    //usando setTimeout para aguardar 3 segundos antes de recarregar a pag
+    setTimeout(function(){
+    //recarregando a página
+    location.reload();
+    },1000);
 	}
+
 	else if(l3c1==l3c2 && l3c1==l3c3) {
-	alert("ora ora temos um ganhador -> "+l3c1);
-	location.reload();
+    avisarGanhador();
+    //usando setTimeout para aguardar 3 segundos antes de recarregar a pag
+    setTimeout(function(){
+    //recarregando a página
+    location.reload();
+    },1000);
 	}
 
 	//vertical
 	else if(l1c1==l2c1 && l1c1==l3c1) {
-	alert("ora ora temos um ganhador -> "+l1c1);
-	location.reload();
+    avisarGanhador();
+    //usando setTimeout para aguardar 3 segundos antes de recarregar a pag
+    setTimeout(function(){
+    //recarregando a página
+    location.reload();
+    },1000);
 	}
+
 	else if(l1c2==l2c2 && l1c2==l3c2) {
-	alert("ora ora temos um ganhador -> "+l1c2);
-	location.reload();
+    avisarGanhador();
+    //usando setTimeout para aguardar 3 segundos antes de recarregar a pag
+    setTimeout(function(){
+    //recarregando a página
+    location.reload();
+    },1000);
 	}
+
 	else if(l1c3==l2c3 && l2c3==l3c3) {
-	alert("ora ora temos um ganhador -> "+l1c3);
-	location.reload();
+    avisarGanhador();
+    //usando setTimeout para aguardar 3 segundos antes de recarregar a pag
+    setTimeout(function(){
+    //recarregando a página
+    location.reload();
+    },1000);
 	}
 	
 	//diagonal
 	else if (l1c1 == l2c2 && l1c1 == l3c3){
-	alert("ora ora temos um ganhador -> "+l1c1);
-	location.reload();
+    avisarGanhador();
+    //usando setTimeout para aguardar 3 segundos antes de recarregar a pag
+    setTimeout(function(){
+    //recarregando a página
+    location.reload();
+    },1000);
 	}
+
 	else if(l1c3 == l2c2 && l1c3 == l3c1){
-	alert("ora ora temos um ganhador -> "+l1c3);
-	location.reload();
+    avisarGanhador();
+    //usando setTimeout para aguardar 3 segundos antes de recarregar a pag
+    setTimeout(function(){
+    //recarregando a página
+    location.reload();
+    },1000);
 	}
 	
 }
 
-	/*
-	/a desenvolver/
+/*
+criarPlacar();
+	//a desenvolver/
 	function criarPlacar(){
-	}*/
+        var cx = document.body;
+        //criando elemento div
+       var placar = document.createElement('div');
+       cx.appendChild(placar)
+       
+		//dentro da div criada criando um paragrafo
+		var paragrafo = document.createElement('p');
+		placar.appendChild(paragrafo)
+		
+		//estilizando paragrafo
+		paragrafo.style.fontSize = "200px";
+		paragrafo.style.backgrundColor = "#fffff";
 
+		//adc id no paragrafo
+		paragrafo.id= "msg";
+		//pegando paragrafo pelo id atribuido acima
+		var p = document.getElementById("msg");
+		//adc texto ao paragrafo pego pelo id
+		p.innerHTML = "O Placar por equanto está:  "+jogador;
+		
+		//pulando linha
+		var br = document.createElement('br');
+		p.appendChild(br);
 
+	   //criando texto para a div criando nó de texto
+	   var mensagem = document.createTextNode("Jogador 0"+jogador);
+	   paragrafo.appendChild(mensagem);
+		console.log(mensagem.innerHTML);
+	}
 
+*/
 
 	
 		
@@ -217,7 +264,7 @@ function avisarGanhador(){
 		//estilizando o h1 criado acima
 		mensagemGanhador.style.backgroundColor = "red";
 		mensagemGanhador.style.width="60%";
-		mensagemGanhador.style.height="300px";
+		mensagemGanhador.style.height="100%";
 		mensagemGanhador.style.marginTop="300px";
 		mensagemGanhador.style.position="absolute";
 		mensagemGanhador.style.marginLeft="20%";
@@ -225,7 +272,7 @@ function avisarGanhador(){
 		mensagemGanhador.style.textAlign="center";
 		mensagemGanhador.style.padding="10%";
 		
-		console.log(mensagemGanhador);
+		
 
 		//atribuindo o h1 como filho do body
 		elem_pai.appendChild(mensagemGanhador);
@@ -233,7 +280,7 @@ function avisarGanhador(){
 		//criando mensagem de notifica��o de vencedor
 		var textovitoria = document.createTextNode("voce ganhou "+jogador);
 		mensagemGanhador.appendChild(textovitoria);
-		console.log(elem_pai);
+		
 }
 
 
