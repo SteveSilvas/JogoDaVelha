@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Jogo Da Velha</title>
+	</head>
+	<body class="w3-black" onload="loadGame()">
+		<div class="corpo">
+			<div id="titulo">
+				<a href="jogar.html" >
+					<h1 class=" w3-center w3-xxxlarge" value="jogo da velha">Jogo da Velha</h1> 
+				</a>
+			</div>
+			<h2 id="subTitulo" class=" w3-center" > 
+			</h2>
+			<div id="tabuleiro">
+				<div class="row">
+					<button class="btn" onclick="clicar(this)" class="w3-xxlarge" id="btnl1c1"> 
+						<i  style="font-size: 6em" class="fa fa-hourglass" aria-hidden="true"></i>
+					</button>
+					<button class="btn" onclick="clicar(this)" class="w3-xxlarge" id="btnl1c2">
+						<i  style="font-size: 6em" class="fa fa-hourglass" aria-hidden="true"></i>
+					</button>
+					<button class="btn" onclick="clicar(this)" class="w3-xxlarge" id="btnl1c3">
+						<i  style="font-size: 6em" class="fa fa-hourglass" aria-hidden="true"></i>
+					</button>
+				</div>
+				<div class="row">
+					<button class="btn" onclick="clicar(this)" class="w3-xxlarge" id="btnl2c1">
+						<i  style="font-size: 6em" class="fa fa-hourglass" aria-hidden="true"></i>
+					</button>
+					<button class="btn" onclick="clicar(this)" class="w3-xxlarge" id="btnl2c2">
+						<i  style="font-size: 6em" class="fa fa-hourglass" aria-hidden="true"></i>
+					</button>
+					<button class="btn" onclick="clicar(this)" class="w3-xxlarge" id="btnl2c3">
+						<i  style="font-size: 6em" class="fa fa-hourglass" aria-hidden="true"></i>
+					</button>
+				</div>
+				<div class="row">
+					<button class="btn" onclick="clicar(this)" class="w3-xxlarge" id="btnl3c1">
+						<i  style="font-size: 6em" class="fa fa-hourglass" aria-hidden="true"></i>
+					</button>
+					<button class="btn" onclick="clicar(this)" class="w3-xxlarge" id="btnl3c2">
+						<i  style="font-size: 6em" class="fa fa-hourglass" aria-hidden="true"></i>
+					</button>
+					<button class="btn" onclick="clicar(this)" class="w3-xxlarge" id="btnl3c3">
+						<i  style="font-size: 6em" class="fa fa-hourglass" aria-hidden="true"></i>
+					</button>
+				</div>
+			</div>
+
+			<div class= "rodape" id="rodape">	
+				
+			</div>
+		</div>
+		<script src="js/logica.js"></script>
+	</body>
+</html>
