@@ -1,101 +1,85 @@
 <!DOCTYPE html>
-	<head>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Velha</title>
+  </head>
+  <body>
+    <div class="root center">
+      <section class="container">
+        <strong id="title">Jogo da Velha</strong>
+        <hr class="separator">
+        <nav id="navigator">
+          <a class="option center" href="jogar.html"> Jogar </a>
+          <a class="option center" href="aprender.html"> Aprender </a>
+        </nav>
+      </section>
+    </div>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="estilo.css" type="text/css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        --cor-principal: pink;
+      }
 
-	<title>
-		Jogo Da V�ia
-	</title>
+      .root {
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        color: var(--cor-principal);
+      }
 
-	</head>
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-<body class="w3-black">
-	
+      .container {
+        width: 50%;
+        height: 50%;
+        border: solid 1px var(--cor-principal);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+      }
 
-<style>
-	#navegar ul{
-		list-style: none;
-	padding:1.5%;	
-	}
-	#navegar li{
-		list-style: none;
-	padding:2%;	
-	}
-	#navegar a{
-		text-decoration:none;	
-	}
-	.corpo{
-		height: 600px;
-	}
-	.corpo a{
-		text-decoration:none;	
-	}
-	#titulo{
-		
-	}
-	#navegar{
-		background-color:gray;
-		margin-left:20%;
-		margin-right:20%;
-	}
+      #title {
+        font-size: 2rem;
+        margin-top: 10%;
+        text-align: center;
+        width: 100%;
+      }
 
-	#navegar li:hover{
-		-moz-transform: scale(1.2);
-    		-webkit-transform: scale(1.2);
-    		-o-transform: scale(1.2);
-    		-ms-transform: scale(1.2);
-    		transform: scale(1.2);
-	color: cyan;
-	}
-</style>
-	
-	
+      .separator{
+        width: 80%;
+        background-color: var(--cor-principal);
+      }
 
+      #navigator {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin-top: 10%;
+        gap: 10%;
+      }
 
-
-<div class="corpo">
-
-
-
-	<div id="titulo">
-
-		<a href="jogar.html">
-		<h1  class="w3-center w3-xxxlarge">	 
-		Jogo da V�ia</h1> </a>
-	</div>
-
-	<div id="navegar" class="w3-center">
-		<ul>
-			<li class="w3-center w3-xxlarge"><a href="jogar.html"> Jogar </a> </li>
-			<li class="w3-center w3-xxlarge"><a href="jogar.html"> Entrar </a> </li>
-			<li class="w3-center w3-xxlarge"><a href="jogar.html"> Cadastrar </a> </li>
-			<li class="w3-center w3-xxlarge"><a href="#"> Entender </a> </li>
-		</ul>
-	</div>
-
-</div>
-
-<div>
-</div>
-
-<div class= "rodape">
-		
-	<h5 class="w3-center w3-text-white">
-		Este site � uma iniciativa popular sem fins lucrativos.
-	</h5>
-	<h6 class="w3-center w3-text-white">
-		Todos os direitos de autores (as) devem ser respeitados. <br>
-		As publica��es de E-books s�o de completa responsabilidade do usu�rio.
-	</h6>
-</div>
-
-
-
-</body>
-
-
-
+      .option {
+        width: 90%;
+        background-color: pink;
+        font-size: 1.5rem;
+        margin: 0px 5%;
+        color: black;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      .option:hover{
+        transition: 1s;
+        background-color: rgb(253, 150, 165);
+      }
+    </style>
+  </body>
 </html>

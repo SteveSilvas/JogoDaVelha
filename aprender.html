@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Aprender</title>
+  </head>
+  <body>
+    <main class="root">
+       <section>
+        <strong><h1 style="text-align: center;">O jogo da velha tem regras simples: </h1></strong>
+        <p style="margin-top: 10%;">
+            
+            - Cada jogador escolhe um ícone e o utiliza para preencher o tabuleiro composto por 9 casas; <br>
+            - O jogador escolhe um lugar para colocar seu ícone sendo uma escolha por rodada; <br>
+            - A cada rodada muda a pessoa que está jogando; <br>
+            - Para vencer o jogador precisa preencher 3 casas seguidas em qualquer direção <br>
+            (horizontal, vertical ou diagonal).
+
+        </p>
+       </section>
+
+      <a href="index.html" style="text-decoration: none; margin-top: 10px; font-size: 2rem;">
+        <i class="fa fa-arrow-left pink" aria-hidden="true"></i>
+        <span class="pink">Voltar</span>
+      </a>
+    </main>
+
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        --cor-principal: pink;
+      }
+
+      .root {
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        color: var(--cor-principal);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .pink {
+        color: var(--cor-principal);
+      }
+
+      section{
+        width: 50%;
+        color: white;
+        font-size: 1.3rem;
+        border: 1px solid var(--cor-principal);
+        margin-top: 10%;
+        padding: 2%;
+      }
+    </style>
+  </body>
+</html>
